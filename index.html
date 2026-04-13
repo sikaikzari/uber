@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="今からUber Eats配達員を始めても遅くない！実際に配達した体験談をもとに、始め方・必要グッズ・注意点をわかりやすく解説します。招待コードで最大5万円ボーナスあり。">
+  <title>今からUberEats配達員って遅い？自由な働き方ガイド</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Kaisei+Opti:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f0e8;
+      --accent: #06C167;
+      --accent2: #FFD700;
+      --gray: #1a1a1a;
+      --mid: #2a2a2a;
+      --text-muted: #888;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 24px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(6,193,103,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,215,0,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Kaisei Opti', serif;
+      font-size: clamp(32px, 8vw, 64px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(18px, 4vw, 28px);
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #aaa;
+      max-width: 560px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .cta-block {
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+
+    .cta-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--black);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      padding: 18px 36px;
+      text-decoration: none;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 40px rgba(6,193,103,0.3);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 60px rgba(6,193,103,0.5);
+    }
+
+    .bonus-badge {
+      display: inline-block;
+      background: var(--accent2);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-left: 12px;
+      vertical-align: middle;
+    }
+
+    /* SCROLL INDICATOR */
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 10px;
+      letter-spacing: 3px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.4s forwards;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    /* BONUS SECTION */
+    .bonus-section {
+      background: var(--gray);
+      padding: 60px 24px;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .bonus-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+      width: 100%;
+    }
+
+    .bonus-card {
+      width: 100%;
+    }
+
+    .bonus-card {
+      background: var(--mid);
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 24px 20px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .bonus-card:hover {
+      border-color: var(--accent);
+    }
+
+    .bonus-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .bonus-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .bonus-amount {
+      font-family: 'Kaisei Opti', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .bonus-amount span {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .bonus-card p {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    /* EXPERIENCE SECTION */
+    .experience-section {
+      padding: 80px 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Kaisei Opti', serif;
+      font-size: clamp(24px, 5vw, 40px);
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .section-title span { color: var(--accent); }
+
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    /* STEPS */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 24px;
+      position: relative;
+      padding-bottom: 40px;
+    }
+
+    .step:last-child { padding-bottom: 0; }
+
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--black);
+      font-weight: 900;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-line {
+      width: 1px;
+      flex: 1;
+      background: #333;
+      margin-top: 8px;
+    }
+
+    .step:last-child .step-line { display: none; }
+
+    .step-content {
+      padding-top: 8px;
+    }
+
+    .step-content h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.8;
+    }
+
+    .step-content .tip {
+      display: inline-block;
+      background: rgba(6,193,103,0.1);
+      border: 1px solid rgba(6,193,103,0.3);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* GOODS SECTION */
+    .goods-section {
+      background: var(--gray);
+      padding: 80px 24px;
+      border-top: 1px solid #222;
+    }
+
+    .goods-section .inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .goods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .goods-card {
+      background: var(--mid);
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 28px 24px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .goods-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .goods-rank {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--accent2);
+      margin-bottom: 12px;
+    }
+
+    .goods-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .goods-card p {
+      font-size: 13px;
+      color: #aaa;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .goods-link {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .goods-link:hover {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    /* NAV SECTION */
+    .nav-section {
+      padding: 80px 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .nav-card {
+      background: var(--gray);
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: var(--white);
+      display: block;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .nav-card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .nav-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .nav-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .nav-card-arrow {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #0d2818 0%, #0a0a0a 50%, #1a1500 100%);
+      padding: 80px 24px;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+
+    .final-cta h2 {
+      font-family: 'Kaisei Opti', serif;
+      font-size: clamp(24px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .final-cta h2 span { color: var(--accent); }
+
+    .final-cta p {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .invite-code-box {
+      display: inline-block;
+      background: rgba(6,193,103,0.1);
+      border: 1px solid rgba(6,193,103,0.4);
+      border-radius: 8px;
+      padding: 16px 32px;
+      margin-bottom: 32px;
+    }
+
+    .invite-code-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .invite-code {
+      font-family: 'Kaisei Opti', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 4px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--gray);
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 480px) {
+      .hero { padding: 80px 20px 60px; }
+      .bonus-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-label">UberEats 配達員ガイド <span id="year"></span></p>
+    <h1>今から始めても<br><span>遅くない。</span></h1>
+    <p class="hero-sub">自由な働き方ガイド</p>
+    <p class="hero-desc">
+      「もう稼げないんじゃ？」と思ってるあなたへ。実際に配達した体験をもとに、リアルな始め方・コツ・必要なものを全部まとめました。招待コードから登録すると最大5万円のボーナスあり。
+    </p>
+    <div class="cta-block">
+      <p class="cta-label">招待コードで登録する</p>
+      <a href="https://www.uber.com/signup/drive/deliver/?invite_code=xazamjr" class="cta-btn" target="_blank" rel="noopener">
+        今すぐ無料登録 <span class="bonus-badge">最大¥50,000</span>
+      </a>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- BONUS -->
+  <section class="bonus-section">
+    <div style="max-width:720px;margin:0 auto;">
+      <p class="section-label">招待ボーナス</p>
+      <h2 class="section-title">登録するだけで<span>ボーナス獲得</span></h2>
+      <p class="section-desc">10件配達を完了するともらえる。始めるなら招待コードから登録するのが絶対お得。</p>
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <div class="bonus-icon">🚗</div>
+          <div class="bonus-amount">¥50,000<span> 獲得</span></div>
+          <p>車での配達<br>10件完了で受け取り</p>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-icon">🛵</div>
+          <div class="bonus-amount">¥50,000<span> 獲得</span></div>
+          <p>バイクでの配達<br>10件完了で受け取り</p>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-icon">🚲</div>
+          <div class="bonus-amount">¥30,000<span> 獲得</span></div>
+          <p>自転車での配達<br>10件完了で受け取り</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO START -->
+  <section class="experience-section">
+    <p class="section-label">始め方</p>
+    <h2 class="section-title">配達の流れ、<br><span>全部教えます</span></h2>
+    <p class="section-desc">アプリの操作でつまずきやすいポイントも含めて、実体験をもとに解説します。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>ナビを開始する</h3>
+          <p>受注したらまず「ナビを開始」ボタンが出てくるまで少し待つ。出てきたら押してGoogleマップへ。アプリのUIは少し反応が遅いので焦らないのがコツ。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>お店で受け取ったら必ずスワイプ</h3>
+          <p>商品を受け取ったらドライバーアプリで「注文内容を確認」から受け取りスワイプをする。これをしないと注文者へのナビが開始されないので注意！</p>
+          <span class="tip">⚠️ 受け取りスワイプ忘れると詰む</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>注文者へのナビ開始</h3>
+          <p>「注文者へのナビを開始」ボタンが出たら押してGoogleマップへ遷移。場所がわかりにくい場合はマップを拡大してしっかり確認。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>置き配は必ず写真撮影</h3>
+          <p>置き配の場合、写真を撮らないと配達を完了できない。「写真を撮る」ボタンを必ず見つけて撮影しよう。都心は置き配がほとんど。</p>
+          <span class="tip">📸 写真ボタンが見つからなくてもよく探せばある</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;padding:24px;background:var(--gray);border-radius:8px;border:1px solid #333;">
+      <p style="font-size:12px;letter-spacing:3px;color:var(--accent);margin-bottom:12px;">🔰 初心者へのアドバイス</p>
+      <p style="font-size:14px;color:#aaa;line-height:1.9;">
+        最初は<strong style="color:var(--white);">1件ずつ</strong>受注しよう。雨の日は避けて、マクドナルドなどの<strong style="color:var(--white);">チェーン店・短距離</strong>から始めるのがおすすめ。現金配達は<strong style="color:var(--white);">50件以上</strong>配達しないと来ないのでお釣り等の心配は最初は不要。
+      </p>
+    </div>
+  </section>
+
+  <!-- GOODS -->
+  <section class="goods-section">
+    <div class="inner">
+      <p class="section-label">必須グッズ</p>
+      <h2 class="section-title">これがないと<br><span>始まらない</span></h2>
+      <p class="section-desc">実際に使ってみてわかった、本当に必要なものだけ。</p>
+
+      <div class="goods-grid">
+        <div class="goods-card">
+          <p class="goods-rank">MUST HAVE #01</p>
+          <h3>📱 スマホホルダー</h3>
+          <p>片手でハンドルを持ちながらスマホを操作するのは危険すぎる。これは絶対に最初から用意すること。ワンタッチ固定式・360度回転タイプが使いやすい。</p>
+          <a href="https://www.amazon.co.jp/dp/B0DN5YP7ZM" class="goods-link" target="_blank" rel="noopener">Amazonで見る →</a>
+        </div>
+
+        <div class="goods-card">
+          <p class="goods-rank">MUST HAVE #02</p>
+          <h3>🎒 デリバリーバッグ</h3>
+          <p>Uberロゴなしでもいける。重要なのは「仕切り板付き」で「取り出し口が下部にある」こと。先に入れた商品を先に出せる構造が配達効率を上げる。</p>
+          <a href="https://www.amazon.co.jp/dp/B0B14MXZQB" class="goods-link" target="_blank" rel="noopener">Amazonで見る →</a>
+        </div>
+
+        <div class="goods-card">
+          <p class="goods-rank">MUST HAVE #03</p>
+          <h3>🌧️ バッグを背負ったまま着れるカッパ</h3>
+          <p>雨の日も稼働するなら必須。普通のレインコートだとバッグが濡れるため、デリバリー用の大きめサイズか、バッグの上からかぶれるタイプを選ぼう。</p>
+          <a href="https://www.amazon.co.jp/s?k=デリバリー+カッパ+大きめ" class="goods-link" target="_blank" rel="noopener">Amazonで探す →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS TO OTHER PAGES -->
+  <section class="nav-section">
+    <p class="section-label">もっと詳しく</p>
+    <h2 class="section-title">知っておくべき<br><span>ルールと法律</span></h2>
+    <p class="section-desc">稼ぐ前に知っておかないと痛い目を見る情報もまとめています。</p>
+
+    <div class="nav-grid">
+      <a href="./aokippu.html" class="nav-card">
+        <div class="nav-card-icon">🚔</div>
+        <h3>青切符・交通違反<br>注意ガイド</h3>
+        <p>自転車の青切符制度が始まった。知らないと即アウトな違反まとめ。</p>
+        <span class="nav-card-arrow">→</span>
+      </a>
+      <a href="./rules.html" class="nav-card">
+        <div class="nav-card-icon">📋</div>
+        <h3>UberEats配達員の<br>法律・ルール</h3>
+        <p>個人事業主として知っておくべき税金・保険・道交法の基礎知識。</p>
+        <span class="nav-card-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>まだ迷ってる？<br><span>とりあえず登録だけでもいい。</span></h2>
+    <p>登録は無料。やめたくなればいつでもやめられる。<br>招待コードから登録すると10件配達で最大5万円のボーナスがもらえる。</p>
+
+    <div class="invite-code-box">
+      <p class="invite-code-label">INVITE CODE</p>
+      <p class="invite-code">xazamjr</p>
+    </div>
+
+    <br><br>
+    <a href="https://www.uber.com/signup/drive/deliver/?invite_code=xazamjr" class="cta-btn" target="_blank" rel="noopener">
+      招待コードで無料登録する <span class="bonus-badge">最大¥50,000</span>
+    </a>
+  </section>
+
+  <footer>
+    <p>
+      本サイトはAmazonアソシエイト・プログラムの参加者です。<br>
+      掲載情報は執筆時点のものです。最新情報はUber公式サイトをご確認ください。<br>
+      © <span id="footer-year"></span> 自由な働き方ガイド
+    </p>
+  </footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UberEats配達員は個人事業主。税金・確定申告・経費・保険など、始める前に知っておくべき法律とルールをわかりやすく解説。">
+  <title>UberEats配達員の法律・ルールまとめ｜税金・確定申告・保険を全解説</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Kaisei+Opti:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f0e8;
+      --accent: #06C167;
+      --accent2: #FFD700;
+      --danger: #FF4444;
+      --gray: #1a1a1a;
+      --mid: #2a2a2a;
+      --text-muted: #888;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .nav {
+      padding: 20px 24px;
+      border-bottom: 1px solid #222;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 13px; }
+    .nav span { color: #444; font-size: 13px; }
+
+    /* HERO */
+    .hero {
+      padding: 56px 24px 48px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #222;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(6,193,103,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Kaisei Opti', serif;
+      font-size: clamp(26px, 6vw, 48px);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero-desc {
+      font-size: 15px;
+      color: #aaa;
+      line-height: 1.9;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+    .hero-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 560px;
+    }
+    .hero-card {
+      background: rgba(6,193,103,0.07);
+      border: 1px solid rgba(6,193,103,0.2);
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.7;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      cursor: pointer;
+    }
+    .hero-card:hover, .hero-card:active {
+      background: rgba(6,193,103,0.14);
+      border-color: rgba(6,193,103,0.5);
+      transform: translateX(3px);
+    }
+    .hero-card span:first-child { flex-shrink: 0; }
+    .hero-card-arrow {
+      margin-left: auto;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 64px 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-label.danger { color: var(--danger); }
+    .section-title {
+      font-family: 'Kaisei Opti', serif;
+      font-size: clamp(22px, 5vw, 36px);
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .section-title span { color: var(--accent); }
+    .section-title span.danger { color: var(--danger); }
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    /* CARDS */
+    .card-list { display: flex; flex-direction: column; gap: 14px; }
+    .card {
+      background: var(--gray);
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 22px 20px;
+      transition: border-color 0.3s;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .card-icon { font-size: 22px; flex-shrink: 0; }
+    .card h3 { font-size: 15px; font-weight: 700; }
+    .card p { font-size: 13px; color: #aaa; line-height: 1.8; }
+    .card .tag {
+      display: inline-block;
+      background: rgba(6,193,103,0.1);
+      border: 1px solid rgba(6,193,103,0.3);
+      color: var(--accent);
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-top: 10px;
+    }
+    .card .tag.danger {
+      background: rgba(255,68,68,0.1);
+      border-color: rgba(255,68,68,0.3);
+      color: var(--danger);
+    }
+
+    /* EXPENSE TABLE */
+    .expense-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .expense-item {
+      background: var(--gray);
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      padding: 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      transition: border-color 0.3s;
+    }
+    .expense-item:hover { border-color: var(--accent); }
+    .expense-name { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .expense-detail { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+    .expense-ok {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 4px 10px;
+      border: 1px solid rgba(6,193,103,0.4);
+      border-radius: 4px;
+      background: rgba(6,193,103,0.08);
+    }
+    .expense-ok.partial { color: var(--accent2); border-color: rgba(255,215,0,0.4); background: rgba(255,215,0,0.06); }
+
+    /* WARN BOX */
+    .warn-box {
+      background: rgba(255,68,68,0.07);
+      border: 1px solid rgba(255,68,68,0.25);
+      border-radius: 8px;
+      padding: 22px 20px;
+      margin-top: 32px;
+    }
+    .warn-box h3 { font-size: 14px; font-weight: 700; color: var(--danger); margin-bottom: 10px; }
+    .warn-box p { font-size: 13px; color: #aaa; line-height: 1.9; }
+
+    /* INFO BOX */
+    .info-box {
+      background: rgba(6,193,103,0.06);
+      border: 1px solid rgba(6,193,103,0.2);
+      border-radius: 8px;
+      padding: 22px 20px;
+      margin-top: 24px;
+    }
+    .info-box h3 { font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+    .info-box p { font-size: 13px; color: #aaa; line-height: 1.9; }
+
+    /* BG SECTION */
+    .bg-section {
+      background: var(--gray);
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    /* TAX TABLE */
+    .tax-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 14px;
+    }
+    .tax-table th {
+      background: var(--mid);
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      border-bottom: 1px solid #333;
+    }
+    .tax-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #1e1e1e;
+      color: #ccc;
+      line-height: 1.6;
+    }
+    .tax-table tr:last-child td { border-bottom: none; }
+    .tax-table td:first-child { font-weight: 700; color: var(--white); }
+    .tax-table td .hi { color: var(--accent); font-weight: 700; }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, #0a0a0a 0%, #001a0a 100%);
+      padding: 64px 24px;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+    .cta-section h2 {
+      font-family: 'Kaisei Opti', serif;
+      font-size: clamp(20px, 5vw, 36px);
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .cta-section h2 span { color: var(--accent); }
+    .cta-section p { font-size: 14px; color: #aaa; margin-bottom: 32px; line-height: 1.8; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--black);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      padding: 18px 36px;
+      text-decoration: none;
+      border-radius: 4px;
+      box-shadow: 0 0 40px rgba(6,193,103,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(6,193,103,0.5); }
+    .bonus-badge {
+      display: inline-block;
+      background: var(--accent2);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    footer { background: var(--gray); padding: 32px 24px; text-align: center; border-top: 1px solid #222; }
+    footer p { font-size: 12px; color: #555; line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="./index.html">← トップへ戻る</a>
+    <span>/</span>
+    <span style="color:#666;">法律・ルールガイド</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-label">UberEats 配達員 法律・ルール</p>
+    <h1>知らないと損する、<br><span>お金と法律の話。</span></h1>
+    <p class="hero-desc">
+      UberEats配達員は「個人事業主」扱い。普通のバイトと違って税金は自分で申告が必要だゆ。でも経費をちゃんと使えば節税もできる。始める前に一度だけ読んでおけばOKだゆ。
+    </p>
+    <div class="hero-cards">
+      <a href="#sec-jigyonushi" class="hero-card"><span>💼</span><span>Uberの従業員ではなく<strong style="color:var(--white);">個人事業主</strong>扱い。税金は自分で申告</span><span class="hero-card-arrow">›</span></a>
+      <a href="#sec-tax" class="hero-card"><span>📝</span><span>副業なら年間<strong style="color:var(--white);">20万円超</strong>で確定申告が必要（専業なら95万円超）</span><span class="hero-card-arrow">›</span></a>
+      <a href="#sec-keihi" class="hero-card"><span>💰</span><span>バッグ・スマホホルダー・通信費などが<strong style="color:var(--white);">経費</strong>になる</span><span class="hero-card-arrow">›</span></a>
+      <a href="#sec-hoken" class="hero-card"><span>🛡️</span><span><strong style="color:var(--white);">配達中の事故</strong>はUberが三井住友海上と協働で自動補償。ただし<strong style="color:var(--danger);">配達外は対象外</strong>なので任意保険も検討を</span><span class="hero-card-arrow">›</span></a>
+    </div>
+  </section>
+
+  <!-- 個人事業主とは -->
+  <section class="section" id="sec-jigyonushi">
+    <p class="section-label">基本のき</p>
+    <h2 class="section-title">配達員は<span>個人事業主</span>だゆ</h2>
+    <p class="section-desc">普通のバイトと何が違うのか、まずここを理解しておこう。</p>
+    <div class="card-list">
+      <div class="card">
+        <div class="card-head"><span class="card-icon">🏢</span><h3>Uberの「従業員」ではない</h3></div>
+        <p>UberEatsはアプリを提供しているだけ。配達員はUberに雇われているのではなく、独立した個人事業主として仕事を請け負う形。だから給料ではなく「報酬」として週払いで振り込まれる。</p>
+        <span class="tag">業務委託契約</span>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-icon">📊</span><h3>税金は天引きされない</h3></div>
+        <p>普通のバイトは給料から税金が自動的に引かれる（源泉徴収）。でも配達員への報酬は全額そのまま振り込まれる。だから自分で確定申告して税金を払う必要がある。</p>
+        <span class="tag danger">放置すると無申告加算税のペナルティあり</span>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-icon">📅</span><h3>確定申告は毎年2〜3月</h3></div>
+        <p>1月〜12月の収入を翌年2月16日〜3月15日に申告する。今はe-Taxでスマホからでも申告できて思ったより難しくない。国税庁のサイトで作成して提出するだけ。</p>
+        <span class="tag">e-Taxでスマホ申告OK</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 確定申告が必要なケース -->
+  <div class="bg-section">
+    <section class="section" id="sec-tax">
+      <p class="section-label danger">確定申告</p>
+      <h2 class="section-title">いくら稼いだら<span class="danger">申告が必要？</span></h2>
+      <p class="section-desc">状況によって基準が違うゆ。自分がどれに当てはまるか確認しておこう。</p>
+
+      <table class="tax-table">
+        <thead>
+          <tr>
+            <th>状況</th>
+            <th>申告が必要になるライン</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>会社員・アルバイトの副業</td>
+            <td>Uberでの所得が<span class="hi">年間20万円超</span></td>
+          </tr>
+          <tr>
+            <td>専業（収入がUberのみ）</td>
+            <td>所得が<span class="hi">年間95万円超</span>（基礎控除額）</td>
+          </tr>
+          <tr>
+            <td>個人事業主（他に事業あり）</td>
+            <td>Uberの収入も合算して<span class="hi">申告が必要</span></td>
+          </tr>
+          <tr>
+            <td>学生（アルバイトあり）</td>
+            <td>Uberでの所得が<span class="hi">年間20万円超</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warn-box">
+        <h3>⚠️ 申告しないとどうなる？</h3>
+        <p>UberEatsの報酬は海外からの国際送金のため税務署にチェックされやすいゆ。申告しないと「無申告加算税」「延滞税」などのペナルティが加算されて、本来より多く払うことになる。黙っていればバレないと思わない方がいいゆ。</p>
+      </div>
+
+      <div class="info-box">
+        <h3>💡 副業を会社にバレたくない場合</h3>
+        <p>確定申告の際、住民税の徴収方法を「普通徴収（自分で納付）」に設定すること。これをしないと会社経由で住民税が増額され、副業がバレる可能性がある。申告書の「住民税・事業税に関する事項」欄で選択できる。</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- 経費 -->
+  <section class="section" id="sec-keihi">
+    <p class="section-label">節税のコツ</p>
+    <h2 class="section-title">これが<span>経費</span>になる</h2>
+    <p class="section-desc">経費にできるものは漏れなく計上すると節税になるゆ。領収書・レシートは5年間保管しておくこと。</p>
+
+    <div class="expense-grid">
+      <div class="expense-item">
+        <div>
+          <div class="expense-name">🎒 デリバリーバッグ・スマホホルダー</div>
+          <div class="expense-detail">配達のために購入した備品は全額経費OK。10万円以下なら消耗品費として一括計上できる。</div>
+        </div>
+        <span class="expense-ok">全額OK</span>
+      </div>
+      <div class="expense-item">
+        <div>
+          <div class="expense-name">📱 スマートフォン通信費</div>
+          <div class="expense-detail">プライベートと兼用の場合は業務使用割合分だけ経費に（按分）。例：月1万円で50%業務利用なら5,000円。</div>
+        </div>
+        <span class="expense-ok partial">按分OK</span>
+      </div>
+      <div class="expense-item">
+        <div>
+          <div class="expense-name">🚲 自転車・バイクの修理費・消耗品</div>
+          <div class="expense-detail">タイヤ交換、チェーン交換など配達で使う乗り物のメンテナンス費用。ガソリン代も対象。</div>
+        </div>
+        <span class="expense-ok partial">按分OK</span>
+      </div>
+      <div class="expense-item">
+        <div>
+          <div class="expense-name">🌧️ カッパ・ヘルメットなど装備品</div>
+          <div class="expense-detail">配達専用として購入した衣類・装備品は経費に計上できる。</div>
+        </div>
+        <span class="expense-ok">全額OK</span>
+      </div>
+      <div class="expense-item">
+        <div>
+          <div class="expense-name">🔦 ライト・その他小物</div>
+          <div class="expense-detail">夜間配達に必要なライトや配達グッズ全般。領収書を保管しておくこと。</div>
+        </div>
+        <span class="expense-ok">全額OK</span>
+      </div>
+      <div class="expense-item">
+        <div>
+          <div class="expense-name">🏥 自転車保険の掛金</div>
+          <div class="expense-detail">配達中の事故に備えて加入した保険の保険料は経費として計上できる。</div>
+        </div>
+        <span class="expense-ok">全額OK</span>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top:28px;">
+      <h3>💡 青色申告にすると最大65万円控除</h3>
+      <p>開業届を提出して青色申告承認申請書も出せば、青色申告特別控除として最大65万円の控除が受けられる。e-Taxで申告すれば65万円控除が適用される。専業や稼ぎが多い人は絶対やった方がいいゆ。開業後2ヶ月以内に申請が必要なので早めに手続きを。</p>
+    </div>
+  </section>
+
+  <!-- 保険 -->
+  <div class="bg-section">
+    <section class="section" id="sec-hoken">
+      <p class="section-label">保険・補償</p>
+      <h2 class="section-title">Uberの<span>補償が実は太っ腹</span>だゆ</h2>
+      <p class="section-desc">配達員登録と同時に、三井住友海上火災保険との協働プログラムに自動加入（手続き不要・無料）。ただし補償されるのは「配達中」のみなので注意が必要。</p>
+
+      <div class="card-list">
+        <div class="card">
+          <div class="card-head"><span class="card-icon">🎁</span><h3>登録するだけで自動加入！Uber補償プログラム</h3></div>
+          <p>配達員に登録すると、追加費用ゼロで三井住友海上との協働保険に自動加入される。自転車・原付・バイク・軽自動車、すべての車両が対象。補償内容は以下の通り。</p>
+          <span class="tag">無料・手続き不要</span>
+        </div>
+      </div>
+
+      <!-- 補償詳細グリッド -->
+      <div class="expense-grid" style="margin-top:20px;">
+        <div class="expense-item">
+          <div>
+            <div class="expense-name">🤝 対人・対物賠償</div>
+            <div class="expense-detail">配達中に歩行者を怪我させた、注文者の自宅や車を壊してしまった場合などに対応。商品の受け渡しトラブルも対象。</div>
+          </div>
+          <span class="expense-ok">配達中OK</span>
+        </div>
+        <div class="expense-item">
+          <div>
+            <div class="expense-name">🏥 休業見舞金</div>
+            <div class="expense-detail">配達中の事故で入院・療養が必要になった場合、1日最大7,500円の見舞金が最大60日間支給される。</div>
+          </div>
+          <span class="expense-ok">最大60日</span>
+        </div>
+        <div class="expense-item">
+          <div>
+            <div class="expense-name">🔪 手術補償</div>
+            <div class="expense-detail">入院手術は7万5,000円、外来（日帰り）手術は3万7,500円が支給される。</div>
+          </div>
+          <span class="expense-ok">配達中OK</span>
+        </div>
+        <div class="expense-item">
+          <div>
+            <div class="expense-name">🏨 入院一時金</div>
+            <div class="expense-detail">入院した場合、ヘルメット着用で2万円、未着用でも5,000円が支給される。ヘルメット着用で補償額が4倍になるゆ。</div>
+          </div>
+          <span class="expense-ok">ヘルメット着用推奨</span>
+        </div>
+        <div class="expense-item">
+          <div>
+            <div class="expense-name">💐 死亡時家族見舞金</div>
+            <div class="expense-detail">万が一配達中の事故で亡くなった場合、配偶者・18歳以下の子ども（最大3人）それぞれに最大15万円が支給される。</div>
+          </div>
+          <span class="expense-ok">配達中OK</span>
+        </div>
+      </div>
+
+      <div class="warn-box">
+        <h3>⚠️ 「配達中」以外は一切補償されない</h3>
+        <p>この保険が適用されるのは、<strong style="color:var(--white);">配達リクエストを受けてから配達完了（またはキャンセル）するまでの間だけ</strong>。待機中・エリアへの移動中・帰宅中に事故が起きた場合は補償ゼロ。配達員は街中をずっと走っているので、補償外の時間も長い。任意保険との併用がおすすめだゆ。</p>
+      </div>
+
+      <div class="card-list" style="margin-top:28px;">
+        <div class="card">
+          <div class="card-head"><span class="card-icon">🏥</span><h3>国民健康保険・国民年金</h3></div>
+          <p>会社員をやめて専業になる場合は、健康保険と年金を自分で払う必要がある。国民健康保険は前年の所得に応じて金額が決まる。収入が増えると保険料も上がるので要注意。</p>
+          <span class="tag">専業の場合は要確認</span>
+        </div>
+        <div class="card">
+          <div class="card-head"><span class="card-icon">🛡️</span><h3>任意保険への加入も強く推奨</h3></div>
+          <p>Uberの補償は「配達中」のみ。待機中・移動中はノーガード状態になる。賠償責任補償つきの自転車保険や任意保険に加入すれば、配達外の事故もカバーできる。月数百円からあるし、保険料は経費にもなるゆ。</p>
+          <span class="tag">経費にもなる</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- まとめ -->
+  <section class="section">
+    <p class="section-label">まとめ</p>
+    <h2 class="section-title">やること<span>チェックリスト</span></h2>
+    <p class="section-desc">始める前・始めた後にやっておくべきことをまとめたゆ。</p>
+    <div class="card-list">
+      <div class="card">
+        <div class="card-head"><span class="card-icon">☑️</span><h3>領収書・レシートを全部とっておく</h3></div>
+        <p>バッグ・ホルダー・カッパ・ライトなど配達グッズを買ったらレシートを保管。5年間保管義務あり。スマホで写真に撮っておくと楽だゆ。</p>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-icon">☑️</span><h3>収入の記録をつけておく</h3></div>
+        <p>アプリの週次レポートで収入を確認できる。確定申告のためにスクショや記録を残しておくと後が楽。</p>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-icon">☑️</span><h3>自転車保険に加入する</h3></div>
+        <p>賠償責任補償つきの自転車保険は最低限入っておくべき。月数百円〜で経費にもなる。</p>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="card-icon">☑️</span><h3>副業なら20万円を超えたら確定申告</h3></div>
+        <p>超えそうになったらe-Taxで申告準備を始めよう。難しくないゆ。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>ルールを知ったら<br><span>あとは始めるだけ。</span></h2>
+    <p>招待コードから登録すると10件配達で最大5万円のボーナスがもらえる。<br>登録は無料。いつでもやめられる。</p>
+    <a href="https://www.uber.com/signup/drive/deliver/?invite_code=xazamjr" class="cta-btn" target="_blank" rel="noopener">
+      招待コードで無料登録 <span class="bonus-badge">最大¥50,000</span>
+    </a>
+  </section>
+
+  <footer>
+    <p>
+      本サイトはAmazonアソシエイト・プログラムの参加者です。<br>
+      掲載情報は一般的な情報提供を目的としており、税務・法律の専門的アドバイスではありません。詳細は税理士等にご相談ください。<br>
+      © <span id="year"></span> 自由な働き方ガイド
+    </p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

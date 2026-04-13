@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2026年4月1日から自転車にも青切符制度が導入！Uber Eats配達員が絶対知っておくべき違反内容・反則金・必要な装備をわかりやすく解説。">
+  <title>【2026年4月施行】自転車の青切符とは？UberEats配達員が知るべき違反と反則金ガイド</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Kaisei+Opti:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f0e8;
+      --accent: #06C167;
+      --danger: #FF4444;
+      --warning: #FFD700;
+      --gray: #1a1a1a;
+      --mid: #2a2a2a;
+      --text-muted: #888;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      overflow-x: hidden;
+    }
+    .nav {
+      padding: 20px 24px;
+      border-bottom: 1px solid #222;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 13px; }
+    .nav span { color: #444; font-size: 13px; }
+
+    .hero {
+      padding: 56px 24px 48px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #222;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(255,68,68,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .new-badge {
+      display: inline-block;
+      background: var(--danger);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.7} }
+    .hero h1 {
+      font-family: 'Kaisei Opti', serif;
+      font-size: clamp(26px, 6vw, 48px);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--danger); }
+    .hero-desc {
+      font-size: 15px;
+      color: #aaa;
+      line-height: 1.9;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+    .hero-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(255,68,68,0.07);
+      border: 1px solid rgba(255,68,68,0.25);
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 560px;
+    }
+    .hero-summary-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #ccc;
+    }
+    .hero-summary-item span:first-child { flex-shrink: 0; }
+
+    .section {
+      padding: 64px 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--danger);
+      margin-bottom: 12px;
+    }
+    .section-label.green { color: var(--accent); }
+    .section-title {
+      font-family: 'Kaisei Opti', serif;
+      font-size: clamp(22px, 5vw, 36px);
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .section-title span { color: var(--danger); }
+    .section-title span.green { color: var(--accent); }
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    .violation-list { display: flex; flex-direction: column; gap: 12px; }
+    .violation-item {
+      background: var(--gray);
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: border-color 0.3s;
+    }
+    .violation-item:hover { border-color: var(--danger); }
+    .violation-item.high { border-left: 3px solid var(--danger); }
+    .violation-item.mid  { border-left: 3px solid var(--warning); }
+    .violation-item.low  { border-left: 3px solid #555; }
+    .violation-left { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+    .violation-icon { font-size: 24px; flex-shrink: 0; }
+    .violation-name { font-size: 15px; font-weight: 700; }
+    .violation-note { font-size: 12px; color: var(--text-muted); margin-top: 4px; line-height: 1.5; }
+    .violation-fine {
+      font-family: 'Kaisei Opti', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--danger);
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .violation-fine.warning { color: var(--warning); }
+    .violation-fine.muted { color: #666; font-size: 13px; }
+
+    .red-box {
+      background: rgba(255,68,68,0.07);
+      border: 1px solid rgba(255,68,68,0.3);
+      border-radius: 8px;
+      padding: 24px 20px;
+      margin-top: 32px;
+    }
+    .red-box h3 { font-size: 15px; font-weight: 700; color: var(--danger); margin-bottom: 12px; }
+    .red-box p { font-size: 14px; color: #aaa; line-height: 1.9; }
+
+    .goods-bg { background: var(--gray); border-top: 1px solid #222; border-bottom: 1px solid #222; }
+    .goods-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 36px; }
+    .goods-card {
+      background: var(--mid);
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 24px 20px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .goods-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .goods-rank { font-size: 10px; letter-spacing: 3px; color: var(--warning); margin-bottom: 10px; }
+    .goods-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .goods-card p { font-size: 13px; color: #aaa; line-height: 1.8; margin-bottom: 16px; }
+    .goods-link {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .goods-link:hover { background: var(--accent); color: var(--black); }
+
+    .flow-list { display: flex; flex-direction: column; gap: 0; margin-top: 8px; }
+    .flow-item { display: flex; gap: 20px; position: relative; padding-bottom: 32px; }
+    .flow-item:last-child { padding-bottom: 0; }
+    .flow-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .flow-num {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--danger);
+      color: #fff;
+      font-weight: 900;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flow-line { width: 1px; flex: 1; background: #333; margin-top: 8px; }
+    .flow-item:last-child .flow-line { display: none; }
+    .flow-content { padding-top: 6px; }
+    .flow-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .flow-content p { font-size: 14px; color: #aaa; line-height: 1.8; }
+
+    .check-list { display: flex; flex-direction: column; gap: 12px; }
+    .check-item {
+      background: var(--gray);
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .check-item span:first-child { font-size: 22px; flex-shrink: 0; }
+    .check-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .check-item p { font-size: 13px; color: #aaa; line-height: 1.7; }
+
+    .cta-section {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 100%);
+      padding: 64px 24px;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+    .cta-section h2 {
+      font-family: 'Kaisei Opti', serif;
+      font-size: clamp(20px, 5vw, 36px);
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .cta-section h2 span { color: var(--accent); }
+    .cta-section p { font-size: 14px; color: #aaa; margin-bottom: 32px; line-height: 1.8; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--black);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      padding: 18px 36px;
+      text-decoration: none;
+      border-radius: 4px;
+      box-shadow: 0 0 40px rgba(6,193,103,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(6,193,103,0.5); }
+    .bonus-badge {
+      display: inline-block;
+      background: var(--warning);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    footer { background: var(--gray); padding: 32px 24px; text-align: center; border-top: 1px solid #222; }
+    footer p { font-size: 12px; color: #555; line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="./index.html">← トップへ戻る</a>
+    <span>/</span>
+    <span style="color:#666;">青切符ガイド</span>
+  </nav>
+
+  <section class="hero">
+    <p class="new-badge">2026年4月1日 施行済み</p>
+    <h1>自転車にも<span>青切符</span>が来た。<br>知らないと即アウト。</h1>
+    <p class="hero-desc">
+      2026年4月1日から、自転車の交通違反にも「交通反則通告制度（青切符）」が導入されました。これまで注意で済んでいた違反が、反則金の対象に。Uber Eats配達員として走り続けるなら、今すぐ確認必須です。
+    </p>
+    <div class="hero-summary">
+      <div class="hero-summary-item"><span>🚨</span><span>113種類の違反が反則金の対象に（3,000〜12,000円）</span></div>
+      <div class="hero-summary-item"><span>📱</span><span>ながらスマホは最大30万円の罰金（2024年11月から既に施行）</span></div>
+      <div class="hero-summary-item"><span>🍺</span><span>酒気帯び運転は最大50万円の罰金（同上）</span></div>
+      <div class="hero-summary-item"><span>👤</span><span>対象は16歳以上。3年以内に2回以上違反で講習（6,000円）義務</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">青切符とは</p>
+    <h2 class="section-title">反則金を払えば<span>前科はつかない</span></h2>
+    <p class="section-desc">仕組みをざっくり理解しておこう。</p>
+    <div class="flow-list">
+      <div class="flow-item">
+        <div class="flow-left"><div class="flow-num">1</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <h3>警察官に違反を認知される</h3>
+          <p>悪質・危険な違反を現認された場合に取締りの対象。基本はまず「指導警告」から。繰り返したり悪質な場合に青切符へ移行。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-left"><div class="flow-num">2</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <h3>青切符と納付書が交付される</h3>
+          <p>その場で「青切符」と「反則金の納付書」が渡される。違反内容と金額がその場で確定する。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-left"><div class="flow-num">3</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <h3>7日以内に反則金を仮納付</h3>
+          <p>銀行・郵便局の窓口で反則金を仮納付すれば刑事手続きに移行しない。前科もつかずこれで完了。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-left"><div class="flow-num">4</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <h3>払わないと刑事手続きへ</h3>
+          <p>仮納付しない場合は交通反則通告センターへの出頭が必要。それでも払わないと刑事手続きに移行し、最悪裁判になる。</p>
+        </div>
+      </div>
+    </div>
+    <div class="red-box">
+      <h3>🔴 赤切符（刑事手続き）との違い</h3>
+      <p>酒酔い運転・酒気帯び運転・妨害運転など特に悪質な24種類の違反は、青切符ではなく赤切符の対象。赤切符は刑事手続きとなり、有罪になれば前科がつく。配達員として絶対に避けるべき。</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <p class="section-label">配達員が特に注意すべき違反</p>
+    <h2 class="section-title">これをやると<span>即アウト</span></h2>
+    <p class="section-desc">反則金が高い順。配達中にやりがちなものを中心にまとめたゆ。</p>
+    <div class="violation-list">
+      <div class="violation-item high">
+        <div class="violation-left">
+          <div class="violation-icon">📱</div>
+          <div>
+            <div class="violation-name">ながらスマホ（通話・画面注視）</div>
+            <div class="violation-note">配達アプリを手に持って走るのもアウト。スマホホルダー必須の理由はここ。危険を生じさせた場合は最大30万円。</div>
+          </div>
+        </div>
+        <div class="violation-fine">¥12,000</div>
+      </div>
+      <div class="violation-item high">
+        <div class="violation-left">
+          <div class="violation-icon">🚦</div>
+          <div>
+            <div class="violation-name">信号無視</div>
+            <div class="violation-note">急いでいるときにやりがち。歩行者や車が危険にさらされた場合は取締り対象。</div>
+          </div>
+        </div>
+        <div class="violation-fine">¥6,000</div>
+      </div>
+      <div class="violation-item high">
+        <div class="violation-left">
+          <div class="violation-icon">⛔</div>
+          <div>
+            <div class="violation-name">一時不停止（止まれを無視）</div>
+            <div class="violation-note">交差点でスピードを落とさない走行。配達効率を上げようとするとやりがち。</div>
+          </div>
+        </div>
+        <div class="violation-fine">¥6,000</div>
+      </div>
+      <div class="violation-item mid">
+        <div class="violation-left">
+          <div class="violation-icon">↔️</div>
+          <div>
+            <div class="violation-name">右側通行（逆走）</div>
+            <div class="violation-note">目的地が右側にあると逆走しがち。車道は左側通行が原則。</div>
+          </div>
+        </div>
+        <div class="violation-fine warning">¥6,000</div>
+      </div>
+      <div class="violation-item mid">
+        <div class="violation-left">
+          <div class="violation-icon">🌙</div>
+          <div>
+            <div class="violation-name">夜間無灯火</div>
+            <div class="violation-note">夜間配達で電池切れや消し忘れに注意。相手からの視認性が大幅に下がる。</div>
+          </div>
+        </div>
+        <div class="violation-fine warning">¥3,000</div>
+      </div>
+      <div class="violation-item mid">
+        <div class="violation-left">
+          <div class="violation-icon">☂️</div>
+          <div>
+            <div class="violation-name">傘差し運転</div>
+            <div class="violation-note">雨の日に傘を差しながらの片手運転はアウト。カッパで両手をフリーに。</div>
+          </div>
+        </div>
+        <div class="violation-fine warning">¥3,000</div>
+      </div>
+      <div class="violation-item low">
+        <div class="violation-left">
+          <div class="violation-icon">🍺</div>
+          <div>
+            <div class="violation-name">酒気帯び運転</div>
+            <div class="violation-note">青切符ではなく赤切符の対象。最大50万円の罰金。配達前の飲酒は絶対NG。</div>
+          </div>
+        </div>
+        <div class="violation-fine muted">赤切符・最大50万</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="goods-bg">
+    <section class="section">
+      <p class="section-label green">対策グッズ</p>
+      <h2 class="section-title">違反を防ぐ<span class="green">必須装備</span></h2>
+      <p class="section-desc">青切符対策として揃えておきたいグッズ。装備があれば防げる違反ばかりだゆ。</p>
+      <div class="goods-grid">
+        <div class="goods-card">
+          <p class="goods-rank">MUST #01 ながらスマホ対策</p>
+          <h3>📱 スマホホルダー</h3>
+          <p>手持ちで配達アプリを見ながら走ると「ながらスマホ」で12,000円。ホルダーがあれば視線移動だけでナビ確認でき、違反も防げる。これがないと始まらない。</p>
+          <a href="https://www.amazon.co.jp/dp/B0DN5YP7ZM" class="goods-link" target="_blank" rel="noopener">Amazonで見る →</a>
+        </div>
+        <div class="goods-card">
+          <p class="goods-rank">MUST #02 傘差し運転対策</p>
+          <h3>🌧️ バッグを背負ったまま着れるカッパ</h3>
+          <p>雨の日に傘を差しながら走ると反則金3,000円。それ以上に危険。デリバリー用の大きめカッパかバッグの上からかぶれるタイプで両手をフリーに保とう。</p>
+          <a href="https://www.amazon.co.jp/s?k=デリバリー+レインコート+大きめ" class="goods-link" target="_blank" rel="noopener">Amazonで探す →</a>
+        </div>
+        <div class="goods-card">
+          <p class="goods-rank">MUST #03 夜間無灯火対策</p>
+          <h3>💡 USB充電式ライト（前後セット）</h3>
+          <p>夜間配達では前方ライトが必須。電池切れや消し忘れで無灯火になると反則金3,000円。USB充電式で明るいものを選ぼう。後方の赤いライトもあるとより安全。</p>
+          <a href="https://www.amazon.co.jp/s?k=自転車+ライト+USB充電+前後セット" class="goods-link" target="_blank" rel="noopener">Amazonで探す →</a>
+        </div>
+        <div class="goods-card">
+          <p class="goods-rank">MUST #04 頭部保護（努力義務）</p>
+          <h3>🪖 ヘルメット</h3>
+          <p>未着用は現時点で青切符の対象外だが、2023年から着用が努力義務。自転車死亡事故の約5割が頭部への致命傷。毎日走る配達員こそ着けるべき。</p>
+          <a href="https://www.amazon.co.jp/s?k=自転車+ヘルメット+大人+軽量" class="goods-link" target="_blank" rel="noopener">Amazonで探す →</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="section">
+    <p class="section-label green">まとめ</p>
+    <h2 class="section-title">結局、<span class="green">これだけ守れば大丈夫</span></h2>
+    <p class="section-desc">難しくない。意識するポイントはシンプルだゆ。</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span>✅</span>
+        <div>
+          <h4>スマホはホルダーに固定、手で持たない</h4>
+          <p>一番反則金が高いながらスマホ（12,000円）を防ぐ最重要対策。</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <span>✅</span>
+        <div>
+          <h4>信号・一時停止は必ず守る</h4>
+          <p>急いでいるときほど無視したくなるが、6,000円の反則金＋事故リスク。</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <span>✅</span>
+        <div>
+          <h4>夜はライトをつける・雨はカッパを着る</h4>
+          <p>無灯火・傘差し運転はどちらも3,000円。装備で全部解決できる。</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <span>✅</span>
+        <div>
+          <h4>飲んだら乗らない</h4>
+          <p>酒気帯び運転は最大50万円の罰金＋前科がつく可能性あり。絶対NG。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>まだ登録してないなら<br><span>招待コードでお得に始めよう</span></h2>
+    <p>10件配達するだけで最大5万円のボーナスがもらえる。<br>登録は無料でいつでもやめられる。</p>
+    <a href="https://www.uber.com/signup/drive/deliver/?invite_code=xazamjr" class="cta-btn" target="_blank" rel="noopener">
+      招待コードで無料登録 <span class="bonus-badge">最大¥50,000</span>
+    </a>
+  </section>
+
+  <footer>
+    <p>
+      本サイトはAmazonアソシエイト・プログラムの参加者です。<br>
+      掲載情報は執筆時点のものです。最新情報は警察庁・警視庁の公式サイトをご確認ください。<br>
+      © <span id="year"></span> 自由な働き方ガイド
+    </p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
