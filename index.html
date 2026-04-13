@@ -520,24 +520,24 @@
       background: rgba(6,193,103,0.1);
       border: 1px solid rgba(6,193,103,0.4);
       border-radius: 8px;
-      width: 160px;
-      height: 160px;
+      padding: 20px 24px;
       margin-bottom: 32px;
     }
 
     .invite-code-label {
-      font-size: 10px;
-      letter-spacing: 3px;
+      font-size: 9px;
+      letter-spacing: 2px;
       color: var(--text-muted);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      text-align: center;
     }
 
     .invite-code {
       font-family: 'Kaisei Opti', serif;
-      font-size: 28px;
+      font-size: 18px;
       font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 4px;
+      color: var(--white);
+      letter-spacing: 2px;
     }
 
     /* FOOTER */
@@ -787,11 +787,11 @@
     <h2>まだ迷ってる？<br><span>とりあえず登録だけでもいい。</span></h2>
     <p>登録は無料。やめたくなればいつでもやめられる。<br>招待コードから登録すると10件配達で最大5万円のボーナスがもらえる。</p>
 
-    <div class="invite-code-box" onclick="copyCode()" style="cursor:pointer;padding:16px 32px;">
-      <p class="invite-code-label">INVITE CODE</p>
-      <p class="invite-code">p8avbbs</p>
-      <p id="copyMsg" style="font-size:11px;color:var(--accent);height:14px;margin-top:4px;opacity:0;transition:opacity 0.3s;"></p>
-    </div>
+<div class="invite-code-box" onclick="copyCode()" style="cursor:pointer;">
+  <div class="invite-code-label">INVITE CODE</div>
+  <div class="invite-code" style="margin-top: 30px;">p8avbbs</div>
+  <p id="copyMsg" style="font-size:11px;color:var(--accent);height:14px;margin-top: 15px;opacity:0;transition:opacity 0.3s;"></p>
+</div>
     <script>
     function copyCode() {
       navigator.clipboard.writeText('p8avbbs').then(function() {
@@ -801,9 +801,22 @@
         setTimeout(function() { msg.style.opacity = '0'; }, 2000);
       });
     }
+    function shareCode() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'UberEats配達員ガイド',
+          text: '招待コード「p8avbbs」で登録すると最大5万円のボーナスがもらえるよ！',
+          url: 'https://sikaikzari.github.io/uber/'
+        });
+      }
+    }
     </script>
 
-    <br><br>
+    <br>
+    <button onclick="shareCode()" style="background:none;border:1px solid #444;color:#aaa;font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;padding:10px 24px;border-radius:4px;cursor:pointer;margin-bottom:24px;">
+      🔗 このページをシェア
+    </button>
+    <br>
     <a href="https://www.uber.com/signup/drive/deliver/?invite_code=p8avbbs" class="cta-btn" target="_blank" rel="noopener">
       招待コードで無料登録する <span class="bonus-badge">最大¥50,000</span>
     </a>
