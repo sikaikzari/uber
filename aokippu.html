@@ -12,6 +12,7 @@
       --black: #0a0a0a;
       --white: #f5f0e8;
       --accent: #06C167;
+      --blue: #4A9EFF;
       --danger: #FF4444;
       --warning: #FFD700;
       --gray: #1a1a1a;
@@ -46,12 +47,12 @@
       position: absolute;
       top: -100px; right: -100px;
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(255,68,68,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(74,158,255,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
     .new-badge {
       display: inline-block;
-      background: var(--danger);
+      background: var(--blue);
       color: #fff;
       font-size: 11px;
       font-weight: 900;
@@ -69,7 +70,7 @@
       line-height: 1.3;
       margin-bottom: 16px;
     }
-    .hero h1 span { color: var(--danger); }
+    .hero h1 span { color: var(--blue); }
     .hero-desc {
       font-size: 15px;
       color: #aaa;
@@ -110,6 +111,8 @@
       margin-bottom: 12px;
     }
     .section-label.green { color: var(--accent); }
+    .section-label.blue { color: var(--blue); }
+    .section-label.danger { color: var(--danger); }
     .section-title {
       font-family: 'Kaisei Opti', serif;
       font-size: clamp(22px, 5vw, 36px);
@@ -119,6 +122,8 @@
     }
     .section-title span { color: var(--danger); }
     .section-title span.green { color: var(--accent); }
+    .section-title span.blue { color: var(--blue); }
+    .section-title span.danger { color: var(--danger); }
     .section-desc {
       font-size: 14px;
       color: var(--text-muted);
@@ -157,6 +162,23 @@
     }
     .violation-fine.warning { color: var(--warning); }
     .violation-fine.muted { color: #666; font-size: 13px; }
+
+    .violation-sake-box {
+      margin-top: 24px;
+      background: rgba(255,68,68,0.1);
+      border: 2px solid rgba(255,68,68,0.5);
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .violation-sake-box .violation-left { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+    .violation-sake-box .violation-name { font-size: 15px; font-weight: 700; color: var(--danger); }
+    .violation-sake-box .violation-note { font-size: 12px; color: #aaa; margin-top: 4px; line-height: 1.5; }
+    .violation-sake-box .violation-fine { font-family: 'Kaisei Opti', serif; font-size: 15px; font-weight: 700; color: var(--danger); white-space: nowrap; flex-shrink: 0; text-align: right; }
+    .sake-label { font-size: 10px; letter-spacing: 2px; color: var(--danger); margin-bottom: 8px; font-weight: 700; }
 
     .red-box {
       background: rgba(255,68,68,0.07);
@@ -201,7 +223,7 @@
     .flow-num {
       width: 36px; height: 36px;
       border-radius: 50%;
-      background: var(--danger);
+      background: var(--blue);
       color: #fff;
       font-weight: 900;
       font-size: 14px;
@@ -297,8 +319,8 @@
   </section>
 
   <section class="section">
-    <p class="section-label">青切符とは</p>
-    <h2 class="section-title">反則金を払えば<span>前科はつかない</span></h2>
+    <p class="section-label blue">青切符とは</p>
+    <h2 class="section-title">反則金を払えば<span class="blue">前科はつかない</span></h2>
     <p class="section-desc">仕組みをざっくり理解しておこう。</p>
     <div class="flow-list">
       <div class="flow-item">
@@ -338,7 +360,7 @@
 
   <section class="section" style="padding-top:0;">
     <p class="section-label">配達員が特に注意すべき違反</p>
-    <h2 class="section-title">これをやると<span>即アウト</span></h2>
+    <h2 class="section-title">これをやると<span class="danger">即アウト</span></h2>
     <p class="section-desc">反則金が高い順。配達中にやりがちなものを中心にまとめたゆ。</p>
     <div class="violation-list">
       <div class="violation-item high">
@@ -401,16 +423,18 @@
         </div>
         <div class="violation-fine warning">¥3,000</div>
       </div>
-      <div class="violation-item low">
-        <div class="violation-left">
-          <div class="violation-icon">🍺</div>
-          <div>
-            <div class="violation-name">酒気帯び運転</div>
-            <div class="violation-note">青切符ではなく赤切符の対象。最大50万円の罰金。配達前の飲酒は絶対NG。</div>
-          </div>
+    </div>
+
+    <div class="violation-sake-box">
+      <div class="violation-left">
+        <div class="violation-icon">🍺</div>
+        <div>
+          <p class="sake-label">⚠️ 異次元の危険 — 赤切符対象</p>
+          <div class="violation-name">酒気帯び運転</div>
+          <div class="violation-note">青切符ではなく赤切符の対象。刑事手続きとなり有罪で前科がつく。最大50万円の罰金。配達前の飲酒は絶対NG。</div>
         </div>
-        <div class="violation-fine muted">赤切符・最大50万</div>
       </div>
+      <div class="violation-fine">最大<br>50万円</div>
     </div>
   </section>
 
